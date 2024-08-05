@@ -28,6 +28,8 @@ const corsOptions = {
   credentials: true,
 };
 
+const PORT = process.env.PORT || 8080;
+
 app.use(cors(corsOptions));
 
 app.use("/api/v1/user", userRoutes);
@@ -39,6 +41,6 @@ app.get("/home", (req, res) => {
   });
 });
 
-app.listen(process.env.PORT, () => {
-  console.log(`Server is listening on http://localhost:${process.env.PORT}`);
+app.listen(PORT, () => {
+  console.log(`Server is listening on http://localhost:${PORT}`);
 });
